@@ -4,7 +4,7 @@
 The script has five global variables that four of them can be read from a file. If you don't want to have a configuration file, you can just change the values inside the script. The global variables are:
 ```python
 CONFIG_FILE = "/usr/local/etc/v2ray/config.json"	# v2ray config file
-LIST_FILE = "list"	# file to store users and their info
+LIST_FILE = "list"		# file to store users and their info
 SERVER_IP = "12.34.56.78"	# the server's ip address
 APPLICATION_CONFIG = "config"	# configuration file of the script
 SERVER_NAME = "My VPN Server"	# The connection name inside the VMESS URI
@@ -24,9 +24,9 @@ P.S. I pushed the `.vscode` folder intentionally, in case someone wants to debug
 # Usage
 ```
 Usage:
-	Add new user:	python3 v2rayman.py add USERNAME
+	Add new user:			python3 v2rayman.py add USERNAME
 	Delete existing user:	python3 v2rayman.py delete USERNAME
-	List users:	python3 v2rayman.py list
+	List users:			python3 v2rayman.py list
 	Print v2ray config:	python3 v2rayman.py config
 	Restart v2ray service:	python3 v2rayman.py restart
 	Show user details:	python3 v2rayman.py info USERNAME
