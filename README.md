@@ -17,6 +17,7 @@ ip = 12.34.56.78
 name = My Awesome Server
 ```
 `config` will set `CONFIG_FILE`, `list` will set `LIST_FILE`, `ip` will set `SERVER_IP` and `name` will set `SERVER_NAME`.
+
 The application's configuration file is called `config` and should be next to the script. Obviously that also can be changed from the script.
 
 P.S. I pushed the `.vscode` folder intentionally, in case someone wants to debug the script.
@@ -71,7 +72,8 @@ URI: vmess://eyJhZGQiOiIxMi4zNC41Ni43OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJ
 ```
 
 # License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/BloodhoundAllfather/v2ray-manager/blob/master/LICENSE) file for details
+This project is licensed under the MIT License.
+
 You can use the code anyway you want but if you are going to add some features to it, please push to the project so that others can use it.
 
 
