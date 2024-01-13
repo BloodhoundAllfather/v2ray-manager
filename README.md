@@ -35,7 +35,8 @@ Usage:
 
 ### Add User
 To add a user to the v2ray config file, use `add` parameter. The `v2ray` service needs to be restarted after adding a user (needs `root` access). It also generates VMESS URI for the user.
-`python3 v2rayman.py add "Michael Grey"`
+
+`sudo python3 v2rayman.py add "Michael Grey"`
 ```
 User Four has been added: b5b3373e-3e96-468d-90fa-01561e8828fb
 vmess://eyJhZGQiOiIxMi4zNC41Ni43OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJiNWIzMzczZS0zZTk2LTQ2OGQtOTBmYS0wMTU2MWU4ODI4ZmIiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjIyMCIsInBzIjoiTXkgQXdlc29tZSBTZXJ2ZXIgKFVzZXIgRm91cikiLCJzY3kiOiJjaGFjaGEyMC1wb2x5MTMwNSIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
@@ -43,10 +44,12 @@ vmess://eyJhZGQiOiIxMi4zNC41Ni43OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0
 
 ### Delete User
 To delete a user from the v2ray config file, use `delete` parameter. The `v2ray` service needs to be restarted after deleting a user (needs `root` access).
-`python3 v2rayman.py delete "Michael Grey"`
+
+`sudo python3 v2rayman.py delete "Michael Grey"`
 
 ### List Users
 To see list of current users and more info about them, use `list` parameter. It shows the usernames, IDs, number of days passed since their creation and the date of creation.
+
 `python3 v2rayman.py list`
 ```
 1	User One	e29ad5ef-67da-4f8c-813f-676b94a960e4	12 days	01/01/2024 16:11:41
@@ -55,14 +58,17 @@ To see list of current users and more info about them, use `list` parameter. It 
 
 ### Print v2ray Config File
 To print the `v2ray` configuration file, just use `config` parameter.
+
 `python3 v2rayman.py config`
 
 ### Restart v2ray Service
 To restart the `v2ray` service, just use `restart` parameter (needs `root` access).
-`python3 v2rayman.py config`
+
+`sudo python3 v2rayman.py config`
 
 ### Show User Information
 To show information about a given user, just use `info` parameter.
+
 `python3 v2rayman.py info "Michael Grey"`
 ```
 ID: b5b3373e-3e96-468d-90fa-01561e8828fb
