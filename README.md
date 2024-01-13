@@ -32,7 +32,7 @@ Usage:
 	Show user details:	python3 v2rayman.py info USERNAME
 ```
 
-#### Add User
+### Add User
 To add a user to the v2ray config file, use `add` parameter. The `v2ray` service needs to be restarted after adding a user (needs `root` access). It also generates VMESS URI for the user.
 `python3 v2rayman.py add "Michael Grey"`
 ```
@@ -40,11 +40,11 @@ User Four has been added: b5b3373e-3e96-468d-90fa-01561e8828fb
 vmess://eyJhZGQiOiIxMi4zNC41Ni43OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJiNWIzMzczZS0zZTk2LTQ2OGQtOTBmYS0wMTU2MWU4ODI4ZmIiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjIyMCIsInBzIjoiTXkgQXdlc29tZSBTZXJ2ZXIgKFVzZXIgRm91cikiLCJzY3kiOiJjaGFjaGEyMC1wb2x5MTMwNSIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
 ```
 
-#### Delete User
+### Delete User
 To delete a user from the v2ray config file, use `delete` parameter. The `v2ray` service needs to be restarted after deleting a user (needs `root` access).
 `python3 v2rayman.py delete "Michael Grey"`
 
-#### List Users
+### List Users
 To see list of current users and more info about them, use `list` parameter. It shows the usernames, IDs, number of days passed since their creation and the date of creation.
 `python3 v2rayman.py list`
 ```
@@ -52,15 +52,15 @@ To see list of current users and more info about them, use `list` parameter. It 
 2	User Two	be99079c-cd63-40d5-b7eb-f37003ac02b3	6 days	07/01/2024 13:51:56
 ```
 
-#### Print v2ray Config File
+### Print v2ray Config File
 To print the `v2ray` configuration file, just use `config` parameter.
 `python3 v2rayman.py config`
 
-#### Restart v2ray Service
+### Restart v2ray Service
 To restart the `v2ray` service, just use `restart` parameter (needs `root` access).
 `python3 v2rayman.py config`
 
-#### Show User Information
+### Show User Information
 To show information about a given user, just use `info` parameter.
 `python3 v2rayman.py info "Michael Grey"`
 ```
