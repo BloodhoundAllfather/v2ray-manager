@@ -24,9 +24,9 @@ P.S. I pushed the `.vscode` folder intentionally, in case someone wants to debug
 # Usage
 ```
 Usage:
-	Add new user:			python3 v2rayman.py add USERNAME
+	Add new user:		python3 v2rayman.py add USERNAME
 	Delete existing user:	python3 v2rayman.py delete USERNAME
-	List users:			python3 v2rayman.py list
+	List users:		python3 v2rayman.py list
 	Print v2ray config:	python3 v2rayman.py config
 	Restart v2ray service:	python3 v2rayman.py restart
 	Show user details:	python3 v2rayman.py info USERNAME
