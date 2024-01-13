@@ -65,7 +65,7 @@ To show information about a given user, just use `info` parameter.
 `python3 v2rayman.py info "Michael Grey"`
 ```
 ID: b5b3373e-3e96-468d-90fa-01561e8828fb
-Username: User Four
+Username: Michael Grey
 Created At: 13/01/2024 22:15:01
 URI: vmess://eyJhZGQiOiIxMi4zNC41Ni43OCIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJiNWIzMzczZS0zZTk2LTQ2OGQtOTBmYS0wMTU2MWU4ODI4ZmIiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjIyMCIsInBzIjoiTXkgQXdlc29tZSBTZXJ2ZXIgKFVzZXIgRm91cikiLCJzY3kiOiJjaGFjaGEyMC1wb2x5MTMwNSIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==
 ```
