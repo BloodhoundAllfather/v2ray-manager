@@ -64,7 +64,7 @@ To print the `v2ray` configuration file, just use `config` parameter.
 ### Restart v2ray Service
 To restart the `v2ray` service, just use `restart` parameter (needs `root` access).
 
-`sudo python3 v2rayman.py config`
+`sudo python3 v2rayman.py restart`
 
 ### Show User Information
 To show information about a given user, just use `info` parameter.
