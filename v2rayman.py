@@ -93,16 +93,18 @@ def checkUUID(uuidv4):
 	except:
 		return False
 #------------------------------------------------------------------------------------------------------------------------
-def generateVmessUri(uuidv4, username):
+def generateVmessUri(uuidv4, username, config):
 	name = SERVER_NAME + " ({})".format(username)
-
-	config = '{\"add\":\"' + SERVER_IP +  '\",\"aid\":\"0\",\"alpn\":\"\",\"fp\":\"\",\"host\":\"\",\"id\":\"' + uuidv4 + '\",\"net\":\"tcp\",\"path\":\"\",\"port\":\"220\",\"ps\":\"' + name + '\",\"scy\":\"chacha20-poly1305\",\"sni\":\"\",\"tls\":\"\",\"type\":\"none\",\"v\":\"2\"}'
+	port = str(config["inbounds"][0]["port"])
+	protocol = config["inbounds"][0]["protocol"]
+    
+	config = '{\"add\":\"' + SERVER_IP +  '\",\"aid\":\"0\",\"alpn\":\"\",\"fp\":\"\",\"host\":\"\",\"id\":\"' + uuidv4 + '\",\"net\":\"tcp\",\"path\":\"\",\"port\":\"' + port + '\",\"ps\":\"' + name + '\",\"scy\":\"chacha20-poly1305\",\"sni\":\"\",\"tls\":\"\",\"type\":\"none\",\"v\":\"2\"}'
 
 	configBytes = config.encode("ascii")
 	encoded = base64.b64encode(configBytes)
 	encodedString = encoded.decode("ascii")
 
-	return "vmess://" + encodedString
+	return protocol + "://" + encodedString
 #------------------------------------------------------------------------------------------------------------------------
 def writeNewUserToList(listJson, username, uuidv4, uri):
 	now = datetime.now()
@@ -226,7 +228,7 @@ if sys.argv[1].lower() == "add":
 		print(username + " has been added: " + uuidv4)
 		
 		# print VMESS URI
-		vmessUri = generateVmessUri(uuidv4, username)
+		vmessUri = generateVmessUri(uuidv4, username, config)
 		print(vmessUri)
 		
 		# write to the list
@@ -303,6 +305,7 @@ elif sys.argv[1].lower() == "restart":
 	if inputVar == 'y' or inputVar == "":
 		print(subprocess.check_output(["systemctl", "status", "v2ray"]).decode('utf-8'))
 	exit(0)
+
 
 
 

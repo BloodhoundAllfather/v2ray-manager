@@ -1,5 +1,5 @@
 # About The Project
-`v2ray-manager` is a command line tool for managing v2ray users via Python3. You can add, delete and list users, see v2ray config file and also restart the `v2ray` service. It also generates `VMESS` URIs to be used in any application. It's written in a single Python3 script file.
+`v2ray-manager` is a command line tool for managing v2ray users via Python3. You can add, delete and list users, see v2ray config file and also restart the `v2ray` service. It also generates URI based on the `v2ray` configuration to be used in any application. It's written in a single Python3 script file.
 
 The script has five global variables that four of them can be read from a file. If you don't want to have a configuration file, you can just change the values inside the script. The global variables are:
 ```python
@@ -7,7 +7,7 @@ CONFIG_FILE = "/usr/local/etc/v2ray/config.json"	# v2ray config file
 LIST_FILE = "list"		# file to store users and their info
 SERVER_IP = "12.34.56.78"	# the server's ip address
 APPLICATION_CONFIG = "config"	# configuration file of the script
-SERVER_NAME = "My VPN Server"	# The connection name inside the VMESS URI
+SERVER_NAME = "My VPN Server"	# The connection name inside the connection URI
 ```
 If the `APPLICATION_CONFIG` file couldn't be found, the default values will be used. If you want to read these values from a file, the sample config file should be like this:
 ```
@@ -34,7 +34,7 @@ Usage:
 ```
 
 ### Add User
-To add a user to the v2ray config file, use `add` parameter. The `v2ray` service needs to be restarted after adding a user (needs `root` access). It also generates VMESS URI for the user.
+To add a user to the v2ray config file, use `add` parameter. The `v2ray` service needs to be restarted after adding a user (needs `root` access). It also generates URI for the user based on `v2ray` configuration.
 
 `sudo python3 v2rayman.py add "Michael Grey"`
 ```
