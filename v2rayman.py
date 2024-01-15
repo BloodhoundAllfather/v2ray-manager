@@ -14,7 +14,7 @@ CONFIG_FILE = "/usr/local/etc/v2ray/config.json"	# v2ray config file
 LIST_FILE = "list"									# file to store users and their info
 SERVER_IP = "12.34.56.78"							# the server's ip address
 APPLICATION_CONFIG = "config"						# configuration file of the script
-SERVER_NAME = "My VPN Server"						# The connection name inside the VMESS URI
+SERVER_NAME = "My VPN Server"						# The connection name inside the URI
 #------------------------------------------------------------------------------------------------------------------------
 # Read v2ray config file
 def readConfig():
@@ -93,7 +93,8 @@ def checkUUID(uuidv4):
 	except:
 		return False
 #------------------------------------------------------------------------------------------------------------------------
-def generateVmessUri(uuidv4, username, config):
+# generates URI from the v2ray configuration to be imported at v2ray clients
+def generateUri(uuidv4, username, config):
 	name = SERVER_NAME + " ({})".format(username)
 	port = str(config["inbounds"][0]["port"])
 	protocol = config["inbounds"][0]["protocol"]
@@ -106,6 +107,7 @@ def generateVmessUri(uuidv4, username, config):
 
 	return protocol + "://" + encodedString
 #------------------------------------------------------------------------------------------------------------------------
+# Adds the given user to the LIST_FILE (local storage, not v2ray config)
 def writeNewUserToList(listJson, username, uuidv4, uri):
 	now = datetime.now()
 	dateStr = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -117,6 +119,7 @@ def writeNewUserToList(listJson, username, uuidv4, uri):
 	f.write(configStr)
 	f.close()
 #------------------------------------------------------------------------------------------------------------------------
+# Deletes the given user from the LIST_FILE (local storage, not v2ray config)
 def deleteUserFromList(list, uuidv4):
 	foundUserIndex = -1
 	numberOfUsers = len(list["users"])
@@ -158,6 +161,7 @@ def findUsernameGetDetails(list, username):
 					   "URI: " +        list["users"][i]["uri"] + "\n"
 	return ""
 #------------------------------------------------------------------------------------------------------------------------				
+# Returns number of days passed since the user got created
 def numberOfDaysSinceCreated(createdAt):
 	if createdAt == "":
 		return ""
@@ -227,12 +231,12 @@ if sys.argv[1].lower() == "add":
 		writeConfig(config)
 		print(username + " has been added: " + uuidv4)
 		
-		# print VMESS URI
-		vmessUri = generateVmessUri(uuidv4, username, config)
-		print(vmessUri)
+		# print URI
+		uri = generateUri(uuidv4, username, config)
+		print(uri)
 		
 		# write to the list
-		writeNewUserToList(list, username, uuidv4, vmessUri)
+		writeNewUserToList(list, username, uuidv4, uri)
 	else:
 		printUsage()
 		exit(0)
