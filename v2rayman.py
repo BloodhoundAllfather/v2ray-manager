@@ -167,7 +167,7 @@ def numberOfDaysSinceCreated(createdAt):
 		return ""
 	datetimeObj = datetime.strptime(createdAt, '%d/%m/%Y %H:%M:%S')
 	now = datetime.now()
-	return str(abs(now - datetimeObj).days)
+	return str(abs(now - datetimeObj).days) + " days"
 #------------------------------------------------------------------------------------------------------------------------				
 # Read application configuration file next the to main script
 # if the file doesn't exists, then the default values will be used
@@ -269,19 +269,26 @@ elif sys.argv[1].lower() == "delete":
 elif sys.argv[1].lower() == "list":
 	numberOfUsers = len(config["inbounds"][0]["settings"]["clients"])
 	
+	print("")
+	line = "{0:5} {1:30} {2:40} {3:12} {4}".format("#", "Username", "ID", "Days", "Created At")
+	print(line)
+
 	for i in range(numberOfUsers):
 		printed = False
 		
 		for j in range(len(list["users"])):
 			if config["inbounds"][0]["settings"]["clients"][i]["id"] == list["users"][j]["id"]:
 				days = numberOfDaysSinceCreated(list["users"][j]["createdAt"])
-				print(str(i + 1) + "\t" + list["users"][j]["username"] + "\t\t" + config["inbounds"][0]["settings"]["clients"][i]["id"] + "\t" + days + " days\t\t" + list["users"][j]["createdAt"])
+				#line = str(i + 1) + "\t" + list["users"][j]["username"] + "\t\t" + config["inbounds"][0]["settings"]["clients"][i]["id"] + "\t" + days + " days\t\t" + list["users"][j]["createdAt"]
+				line = "{0:5} {1:30} {2:40} {3:12} {4}".format(str(i + 1), list["users"][j]["username"], config["inbounds"][0]["settings"]["clients"][i]["id"], days, list["users"][j]["createdAt"])
+				print(line)
 				printed = True
 		
 		if printed == False:
 			days = numberOfDaysSinceCreated(list["users"][j]["createdAt"])
 			print(str(i + 1) + "\t" + config["inbounds"][0]["settings"]["clients"][i]["id"] + "\t" + days + " days\t\t" + list["users"][j]["createdAt"])
 	
+	print("")
 	exit(0)
 # Show all details about the given user
 elif sys.argv[1].lower() == "info":

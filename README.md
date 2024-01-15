@@ -31,12 +31,12 @@ P.S. I pushed the `.vscode` folder intentionally, in case someone wants to debug
 
 ```
 Usage:
-	Add new user:		python3 v2rayman.py add USERNAME
+	Add new user:           python3 v2rayman.py add USERNAME
 	Delete existing user:	python3 v2rayman.py delete USERNAME
-	List users:		python3 v2rayman.py list
-	Print v2ray config:	python3 v2rayman.py config
-	Restart v2ray service:	python3 v2rayman.py restart
-	Show user details:	python3 v2rayman.py info USERNAME
+	List users:             python3 v2rayman.py list
+	Print v2ray config:     python3 v2rayman.py config
+	Restart v2ray service:  python3 v2rayman.py restart
+	Show user details:      python3 v2rayman.py info USERNAME
 ```
 
 ### Add User
@@ -63,8 +63,9 @@ To see list of current users and more info about them, use `list` parameter. It 
 `python3 v2rayman.py list`
 
 ```
-1	User One	e29ad5ef-67da-4f8c-813f-676b94a960e4	12 days	01/01/2024 16:11:41
-2	User Two	be99079c-cd63-40d5-b7eb-f37003ac02b3	6 days	07/01/2024 13:51:56
+#     Username                       ID                                       Days         Created At
+1     User One                       e29ad5ef-67da-4f8c-813f-676b94a960e4     12 days      01/01/2024 16:11:41
+2     User Two                       be99079c-cd63-40d5-b7eb-f37003ac02b3     6 days       07/01/2024 13:51:56
 ```
 
 ### Print v2ray Config File
