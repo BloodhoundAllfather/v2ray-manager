@@ -5,11 +5,11 @@
 The script has five global variables that four of them can be read from a file. If you don't want to have a configuration file, you can just change the values inside the script. The global variables are:
 
 ```python
-CONFIG_FILE = "/usr/local/etc/v2ray/config.json"	# v2ray config file
-LIST_FILE = "list"		# file to store users and their info
-SERVER_IP = "12.34.56.78"	# the server's ip address
-APPLICATION_CONFIG = "config"	# configuration file of the script
-SERVER_NAME = "My VPN Server"	# The connection name inside the connection URI
+CONFIG_FILE = "/usr/local/etc/v2ray/config.json"  # v2ray config file
+LIST_FILE = "list"                                # file to store users and their info
+SERVER_IP = "12.34.56.78"                         # the server's ip address
+APPLICATION_CONFIG = "config"                     # configuration file of the script
+SERVER_NAME = "My VPN Server"                     # The connection name inside the connection URI
 ```
 
 If the `APPLICATION_CONFIG` file couldn't be found, the default values will be used. If you want to read these values from a file, the sample config file should be like this:
@@ -63,9 +63,9 @@ To see list of current users and more info about them, use `list` parameter. It 
 `python3 v2rayman.py list`
 
 ```
-#     Username                       ID                                       Days         Created At
-1     User One                       e29ad5ef-67da-4f8c-813f-676b94a960e4     12 days      01/01/2024 16:11:41
-2     User Two                       be99079c-cd63-40d5-b7eb-f37003ac02b3     6 days       07/01/2024 13:51:56
+#    Username       ID                                       Days      Created At
+1    User One       e29ad5ef-67da-4f8c-813f-676b94a960e4     12 days   01/01/2024 16:11:41
+2    User Two       be99079c-cd63-40d5-b7eb-f37003ac02b3     6 days    07/01/2024 13:51:56
 ```
 
 ### Print v2ray Config File
