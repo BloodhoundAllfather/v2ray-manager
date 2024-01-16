@@ -1,7 +1,5 @@
 # About The Project
 
-google-site-verification: googlecb286cf46681decb.html
-
 `v2ray-manager` is a command line tool for managing v2ray users via Python3. You can add, delete and list users, see v2ray config file and also restart the `v2ray` service. It also generates URI based on the `v2ray` configuration to be used in any application. It's written in a single Python3 script file.
 
 The script has five global variables that four of them can be read from a file. If you don't want to have a configuration file, you can just change the values inside the script. The global variables are:
