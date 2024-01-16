@@ -6,10 +6,10 @@ The script has five global variables that four of them can be read from a file. 
 
 ```python
 CONFIG_FILE = "/usr/local/etc/v2ray/config.json"  # v2ray config file
-LIST_FILE = "list"                                # file to store users and their info
-SERVER_IP = "12.34.56.78"                         # the server's ip address
-APPLICATION_CONFIG = "config"                     # configuration file of the script
-SERVER_NAME = "My VPN Server"                     # The connection name inside the connection URI
+LIST_FILE = "list"               # file to store users and their info
+SERVER_IP = "12.34.56.78"        # the server's ip address
+APPLICATION_CONFIG = "config"    # configuration file of the script
+SERVER_NAME = "My VPN Server"    # The connection name inside the connection URI
 ```
 
 If the `APPLICATION_CONFIG` file couldn't be found, the default values will be used. If you want to read these values from a file, the sample config file should be like this:
