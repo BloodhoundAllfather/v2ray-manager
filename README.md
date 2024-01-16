@@ -25,8 +25,6 @@ name = My Awesome Server
 
 The application's configuration file is called `config` and should be next to the script. Obviously that also can be changed from the script.
 
-P.S. I pushed the `.vscode` folder intentionally, in case someone wants to debug the script.
-
 # Usage
 
 ```

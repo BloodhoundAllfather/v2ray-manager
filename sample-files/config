@@ -1,3 +1,4 @@
 config = /usr/local/etc/v2ray/config.json
 list = list
 ip = 12.34.56.78
+name = My VPN Server
